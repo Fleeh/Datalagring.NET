@@ -1,0 +1,37 @@
+﻿<Application x:Class="ErrandHandler.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ErrandHandler"
+             xmlns:view="clr-namespace:ErrandHandler.Views"
+             xmlns:viewModel="clr-namespace:ErrandHandler.Models.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/MenuItemTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:UserViewModel}">
+                <view:UserView />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:NewUserViewModel}">
+                <view:NewUserView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ErrandViewModel}">
+                <view:ErrandView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:NewErrandViewModel}">
+                <view:NewErrandView />
+            </DataTemplate>
+
+
+
+
+        </ResourceDictionary>
+       
+    </Application.Resources>
+</Application>
